@@ -3,12 +3,12 @@ import qs from "qs";
 import Vue from "vue";
 
 let NODE_ENV = process.env.NODE_ENV;
-let DEFAULT_URL = "/powerlongbackend/";
+let DEFAULT_URL = "";
 
 console.log(NODE_ENV);
 //自动切生产环境和开发环境,DEFAULT_URL为接口域名
 if (NODE_ENV == "development") {
-  DEFAULT_URL = "http://ceshi.wondware.com/powerlongbackend/";
+  DEFAULT_URL = "";
 } else if (NODE_ENV == "production") {
 }
 
@@ -65,7 +65,7 @@ request.interceptors.response.use(
       if (res.data.code == 415) {
 
         if (window.location.origin) {
-          window.location.href = window.location.origin + '/powerlongback/dashboardbusiness/?#/signin';
+          window.location.href = window.location.origin + '';
         } else {
           window.location.href = "/#/signin";
         }
@@ -85,7 +85,7 @@ request.interceptors.response.use(
     if (errCode == 403) {
     } else if (errCode == 415) {
       if (window.location.origin) {
-        window.location.href = window.location.origin + '/powerlongback/dashboardbusiness/?#/signin';
+        window.location.href = window.location.origin + '';
       } else {
         window.location.href = "/#/signin";
       }
@@ -125,7 +125,7 @@ request_json.interceptors.response.use(
       if (res.data.code == 415) {
 
         if (window.location.origin) {
-          window.location.href = window.location.origin + '/powerlongback/dashboardbusiness/?#/signin';
+          window.location.href = window.location.origin + '';
         } else {
           window.location.href = "/#/signin";
         }
